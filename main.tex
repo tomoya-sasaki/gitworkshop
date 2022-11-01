@@ -1,0 +1,154 @@
+% \documentclass[pdftex,10pt]{beamer}
+\documentclass[handout,pdftex,10pt,aspectratio=169]{beamer}
+
+% Format
+\usetheme{Madrid}
+\usepackage{beamercolorthemeMIT}
+
+% % Format (Emilia's choice)
+% \usetheme{CambridgeUS}
+% \setbeamertemplate{items}[ball]
+% \setbeamertemplate{navigation symbols}{}
+% \setbeamercolor{item projected}{bg=red}
+% \useoutertheme{infolines}
+% \setbeamersize{text margin left=8mm} 
+% \setbeamersize{text margin right=8mm}
+% \setbeamercolor{itemize item}{fg=black}
+% \setbeamercolor{enumerate item}{fg=black}
+
+\usepackage{fancyvrb}
+\fvset{fontsize=\footnotesize}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{}
+
+\usepackage{color}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes.geometric,arrows}
+\usetikzlibrary{decorations.markings}
+
+% \usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{booktabs}
+%\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{multirow}
+%\usepackage{tabularx}
+\usepackage[parfill]{parskip} % Don't indent
+\usepackage{setspace}
+\usepackage{graphicx}
+%\usepackage{fancybox, longtable}
+\usepackage{amssymb,amsfonts,bm}
+\usepackage{wasysym}
+\usepackage{xcolor}
+\usepackage{colortbl}
+% \newcommand\smallfont{\fontsize{7}{7}\selectfont}
+\usepackage{dcolumn,booktabs,multirow,rotating} 
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+%Emilia's addition
+\usepackage{sansmathaccent}
+\pdfmapfile{+sansmathaccent.map}
+
+% == New Commands
+% = For general typesetting
+% \newcommand\spacingset[1]{\renewcommand{\baselinestretch}{#1}\small\normalsize}
+\renewcommand\r{\right}
+\renewcommand\l{\left}
+
+% = For stats & econometrics
+\newcommand{\indep}{\mbox{$\perp\!\!\!\perp$}}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand\ud{\mathrm{d}}
+\newcommand\dist{\buildrel\rm d\over\sim}
+\newcommand\ind{\stackrel{\rm indep.}{\sim}}
+\newcommand\iid{\stackrel{\rm i.i.d.}{\sim}}
+\newcommand\logit{{\rm logit}}
+\newcommand\cA{\mathcal{A}}
+\newcommand\cN{\mathcal{N}}
+\newcommand\E{\mathbb{E}}
+\newcommand\V{\mathbb{V}}
+\newcommand\cJ{\mathcal{J}}
+\newcommand\y{{\bm y}}
+\newcommand\X{{\bm X}}
+\newcommand\x{{\bm x}}
+\newcommand\eps{{\bm\varepsilon}}
+\newcommand\zero{{\bm 0}}
+\newcommand\be{{\bm\beta}}
+\renewcommand\b{{\bm b}}
+\newcommand\C{{\bm C}}
+\newcommand\D{{\bm D}}
+\newcommand\I{{\bm I}}
+\newcommand\Z{{\bm Z}}
+\newcommand\eeta{{\bm \eta}}
+\DeclareMathOperator*\plim{plim}
+\DeclareMathOperator\rank{rank}
+\DeclareMathOperator{\sgn}{sgn}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\definecolor{light-gray}{gray}{0.8}
+
+%% preamble
+\title[Git workshop]{Git for Social Scientists: \\ Introduction to Version Control with Git}
+\author[Tomoya]{Tomoya Sasaki}
+\institute[MIT]{Massachusetts Institute of Technology}
+\date[Fall 2022]{November 4th, 2022}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\titlepage
+\end{frame}
+ 
+\begin{frame}{Introduction}
+  \begin{itemize}
+    \item Why Git? Why Github? Why version control?
+    \item Are these useful only for programmers? $\leadsto$ not really
+    \item Social scientists also benefit from version control with Git
+    \begin{itemize}
+      \item Increase in collaborative projects
+      \item Demand for replication materials
+      \item Complex data manipulation/preprocessing/analysis
+    \end{itemize}
+    \item ``Code and Data for the Social Sciences: A Practitioner's Guide''
+    by Gentzkow and Shapiro has a chapter dedicated for version control
+    \medskip
+    \item This workshop
+    \begin{itemize}
+      \item Introduction to version control
+      \item Pros and cons of Git/Github
+      \item Brief introduction of these tools
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What is version control?}
+  \begin{itemize}
+    \item Some terminologies
+    \begin{itemize}
+      \item Version control: tracking managing changes to file content
+      \item Git: 
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\backupbegin
+\backupend
+\end{document}
