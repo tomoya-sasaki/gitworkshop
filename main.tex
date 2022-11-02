@@ -1,4 +1,4 @@
-% \documentclass[pdftex,10pt]{beamer}
+% \documentclass[pdftex,10pt,aspectratio=169]{beamer}
 \documentclass[handout,pdftex,10pt,aspectratio=169]{beamer}
 
 % Format
@@ -15,6 +15,9 @@
 % \setbeamersize{text margin right=8mm}
 % \setbeamercolor{itemize item}{fg=black}
 % \setbeamercolor{enumerate item}{fg=black}
+
+\beamertemplatenavigationsymbolsempty
+
 
 \usepackage{fancyvrb}
 \fvset{fontsize=\footnotesize}
@@ -54,17 +57,17 @@
    \setcounter{framenumber}{\value{finalframe}}
 }
 
-\newcommand\Wider[2][3em]{%
-\makebox[\linewidth][c]{%
-  \begin{minipage}{\dimexpr\textwidth+#1\relax}
-  \raggedright#2
-  \end{minipage}%
-  }%
-}
+% \newcommand\Wider[2][3em]{%
+% \makebox[\linewidth][c]{%
+%   \begin{minipage}{\dimexpr\textwidth+#1\relax}
+%   \raggedright#2
+%   \end{minipage}%
+%   }%
+% }
 
 %Emilia's addition
-\usepackage{sansmathaccent}
-\pdfmapfile{+sansmathaccent.map}
+% \usepackage{sansmathaccent}
+% \pdfmapfile{+sansmathaccent.map}
 
 % == New Commands
 % = For general typesetting
@@ -103,6 +106,9 @@
 \def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 \definecolor{light-gray}{gray}{0.8}
 
+\graphicspath{{fig}}
+
+
 %% preamble
 \title[Git workshop]{Git for Social Scientists: \\ Introduction to Version Control with Git}
 \author[Tomoya]{Tomoya Sasaki}
@@ -117,20 +123,21 @@
 \end{frame}
  
 \begin{frame}{Introduction}
-  \begin{itemize}
+  \begin{itemize}  \setlength\itemsep{-3pt}
     \item Why Git? Why Github? Why version control?
-    \item Are these useful only for programmers? $\leadsto$ not really
-    \item Social scientists also benefit from version control with Git
-    \begin{itemize}
+    \item These are essential tools for programmers
+    \item How about social social scientists?
+    \item My opinion: Social scientists also benefit from version control with Git \vspace{-5pt}
+    \begin{itemize} \setlength\itemsep{-5pt}
       \item Increase in collaborative projects
-      \item Demand for replication materials
+      \item Demand for clean replication materials
       \item Complex data manipulation/preprocessing/analysis
     \end{itemize}
     \item ``Code and Data for the Social Sciences: A Practitioner's Guide''
     by Gentzkow and Shapiro has a chapter dedicated for version control
     \medskip
-    \item This workshop
-    \begin{itemize}
+    \item This workshop \vspace{-5pt}
+    \begin{itemize} \setlength\itemsep{-5pt}
       \item Introduction to version control
       \item Pros and cons of Git/Github
       \item Brief introduction of these tools
@@ -138,16 +145,123 @@
   \end{itemize}
 \end{frame}
 
+
 \begin{frame}{What is version control?}
   \begin{itemize}
-    \item Some terminologies
+    \item Version control: tracking and managing changes to file content
+    \item Git: (the most popular) software for version control
+    \item Github: service to host your git on the Internet
+    (alternatives include GitLab, Bitbucket ...)
+    \item Repository: unit of a version control project, 
+    contains a folder with a subfolder named \texttt{.git}
     \begin{itemize}
-      \item Version control: tracking managing changes to file content
-      \item Git: 
+      \item Local repository: repository (folder) in your own computer
+      \item Remove repository: repository (folder) in a web hosting services such as Github
     \end{itemize}
+    \item \texttt{.git} folder in a repository tracks and stores every single change you make in the corresponding repository
+    \medskip
+    \item I focus on Git and Github  because they are extremely popular
+    than their alternatives
   \end{itemize}
 \end{frame}
 
+
+\begin{frame}{Why Git and Github: Tracking who/how/when}
+  \setlength{\leftmarginii}{10pt}
+  \begin{columns}%[T]
+    \begin{column}{0.46\linewidth}
+    \begin{itemize}
+      \item<1-> You can identify %\vspace{-5pt}
+      \begin{itemize}
+        \item<1-> who made changes 
+        \item<2-> how they made the changes
+        \item<3-> when they made the changes
+      \end{itemize}
+      \item<4-> You can check the entire history since you created a repository
+      and move back to previous versions easily
+      \item<5-> Github can visualize them nicely
+      \medskip
+      \item<7-> Useful when you 
+      \begin{itemize}
+        \item<7-> want to revert your (particular) changes
+        \item<8-> work on a collaborative project
+      \end{itemize}
+      \medskip
+      \item<9-> You don't need to keep 
+      \begin{itemize}
+        \item<9-> different versions of the same file: \texttt{clean\_data\_1104.R}, \texttt{clean\_data\_1020.R}
+        \item<10-> the same file edited by different people: \texttt{clean\_data\_tomoya.R}, \texttt{clean\_data\_adam.R}
+      \end{itemize}
+    \end{itemize}      
+  \end{column}\hfill
+  \begin{column}{0.53\linewidth}
+    \centering
+    \visible<5->{\includegraphics[width = \linewidth]{github_history.png}}
+    \visible<6->{\includegraphics[width = \linewidth]{github_blame.png}} 
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Why Git and Github: Tracking who/how/when}
+  \begin{itemize}\setlength\itemsep{-3pt}
+    \item You can check how the results change when we try different specification
+    \item Easy to track which part of the results changed 
+  \end{itemize}
+  \vspace{10pt}
+  \centering
+  \includegraphics[width = 0.7\linewidth]{github_regression.png}
+\end{frame}
+
+\begin{frame}{Other side benefits of Git/Github}
+  \begin{columns}[c]
+    \begin{column}{0.46\linewidth}
+      \begin{itemize}\setlength\itemsep{10pt}
+        \item<1-> Hosting a customizable website (free, no ads, tons of templates)
+        \item<2-> Contribute to software packages hosting on Github
+        \item<3-> Tweak a package developed by someone else for your own purposes
+        \item<4-> Send a request to package developer (often happens at ``Issue'')
+        \item<5-> Nice integration with popular apps/websites such as Rstudio and Overleaf 
+      \end{itemize}
+    \end{column}\hfill
+    \begin{column}{0.53\linewidth}
+      % \begin{overprint}
+      % \centering
+      % \onslide<2-3|handout:1>{\includegraphics[width = 0.85\linewidth]{github_forked.png}}
+      % \onslide<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}} 
+      % \end{overprint}
+      \centering
+      \only<2-3|handout:1>{\includegraphics[width = 0.85\linewidth]{github_forked.png}}
+      \only<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}} 
+      \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Limitations: not suitable to track large files}
+  \begin{itemize}
+    \item Github imposes file size limits:
+    \begin{itemize}
+      \item 25 MB per file limit 
+      (you can change this limit up to 100MB by changing setup)
+      \item 1GB per repository limit
+    \end{itemize}
+    \item Remember that \texttt{.git} tracks and stores all the change you make in a repository
+    \item[] $\leadsto$ if you store a huge file in the repository and let \texttt{.git} tracks 
+    its changes, the \texttt{.git} folder can grow quite huge
+    \medskip
+    \item Use \texttt{.gitignore} to specify files that Git should ignore
+    \begin{Verbatim}[frame=single, label=.gitignore]
+      *.csv # ignore csv files
+      /data/ # ignore data folder
+    \end{Verbatim}
+    \item Include huge files as well as sensitive files (password, API key etc) in \texttt{.gitignore}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Limitations: difficult to track non-text files}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+\end{frame}
 
 \backupbegin
 \backupend
