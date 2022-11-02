@@ -232,6 +232,7 @@
       \centering
       \only<2-3|handout:1>{\includegraphics[width = 0.85\linewidth]{github_forked.png}}
       \only<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}} 
+      \only<5|handout:3>{\includegraphics[width = 0.5\linewidth]{github_overleaf.png}} 
       \end{column}
   \end{columns}
 \end{frame}
@@ -257,10 +258,25 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Limitations: difficult to track non-text files}
-  \begin{itemize}
-    \item 
-  \end{itemize}
+\begin{frame}[fragile]{Limitations: not great if you want to track non-text files}
+  \begin{columns}[c]
+    \begin{column}{0.46\linewidth}
+      \begin{itemize}\setlength\itemsep{10pt}
+        \item Git cannot track line by line changes for non-text files such as 
+        PDF, Microsoft Word/Excel/Powerpoint, JPG, ...
+        \item Note that Git still tracks changes
+        \item The value of Git/Github is limited
+        \medskip
+        \item In the left example, Git/Github recognizes the changes as the changes in file sizes\\
+        $\leadsto$ even though you update a figure in PDF or PNG format, 
+        Git/Github might not recognize it unless the file size changes...
+      \end{itemize}
+    \end{column} \hfill
+    \begin{column}{0.53\linewidth}
+      \centering
+      \only<1>{\includegraphics[width = \linewidth]{github_pdf.png}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \backupbegin
