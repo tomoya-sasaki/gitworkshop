@@ -16,8 +16,9 @@
 % \setbeamercolor{itemize item}{fg=black}
 % \setbeamercolor{enumerate item}{fg=black}
 
-\beamertemplatenavigationsymbolsempty
-
+% \beamertemplatenavigationsymbolsempty
+\setbeamertemplate{headline}{}
+\setbeamertemplate{navigation symbols}{}
 
 \usepackage{fancyvrb}
 \fvset{fontsize=\footnotesize}
@@ -30,16 +31,16 @@
 \usetikzlibrary{decorations.markings}
 
 % \usepackage{enumitem}
+\usepackage{listings}
 \usepackage{verbatim}
 \usepackage{amsmath}
 \usepackage{caption}
 \usepackage{booktabs}
-%\usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{multirow}
 %\usepackage{tabularx}
 \usepackage[parfill]{parskip} % Don't indent
-\usepackage{setspace}
+% \usepackage{setspace}
 \usepackage{graphicx}
 %\usepackage{fancybox, longtable}
 \usepackage{amssymb,amsfonts,bm}
@@ -50,11 +51,11 @@
 \usepackage{dcolumn,booktabs,multirow,rotating} 
 
 \newcommand{\backupbegin}{
-   \newcounter{finalframe}
-   \setcounter{finalframe}{\value{framenumber}}
+  \newcounter{finalframe}
+  \setcounter{finalframe}{\value{framenumber}}
 }
 \newcommand{\backupend}{
-   \setcounter{framenumber}{\value{finalframe}}
+  \setcounter{framenumber}{\value{finalframe}}
 }
 
 % \newcommand\Wider[2][3em]{%
@@ -110,8 +111,8 @@
 
 
 %% preamble
-\title[Git workshop]{Git for Social Scientists: \\ Introduction to Version Control with Git}
-\author[Tomoya]{Tomoya Sasaki}
+\title[Git workshop]{Git for Social Scientists: Introduction to Version Control with Git}
+\author[Tomoya]{Tomoya Sasaki\footnote{This workshop is inspired by workshops by Suyeol Yun and Shiro Kuriwaki.}}
 \institute[MIT]{Massachusetts Institute of Technology}
 \date[Fall 2022]{November 4th, 2022}
 
@@ -160,13 +161,13 @@
     \end{itemize}
     \item \texttt{.git} folder in a repository tracks and stores every single change you make in the corresponding repository
     \medskip
-    \item I focus on Git and Github  because they are extremely popular
+    \item I focus on Git/Github  because they are extremely popular
     than their alternatives
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Why Git and Github: Tracking who/how/when}
+\begin{frame}{Benefit of Git/Github: Tracking who/how/when}
   \setlength{\leftmarginii}{10pt}
   \begin{columns}%[T]
     \begin{column}{0.46\linewidth}
@@ -178,7 +179,7 @@
         \item<3-> when they made the changes
       \end{itemize}
       \item<4-> You can check the entire history since you created a repository
-      and move back to previous versions easily
+      and move back to previous versions easily (undo changes)
       \item<5-> Github can visualize them nicely
       \medskip
       \item<7-> Useful when you 
@@ -202,7 +203,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Why Git and Github: Tracking who/how/when}
+\begin{frame}{Benefit of Git/Github: Tracking who/how/when}
   \begin{itemize}\setlength\itemsep{-3pt}
     \item You can check how the results change when we try different specification
     \item Easy to track which part of the results changed 
@@ -239,7 +240,7 @@
 
 \begin{frame}[fragile]{Limitations: not suitable to track large files}
   \begin{itemize}
-    \item Github imposes file size limits:
+    \item Github imposes file size limit:
     \begin{itemize}
       \item 25 MB per file limit 
       (you can change this limit up to 100MB by changing setup)
@@ -249,12 +250,12 @@
     \item[] $\leadsto$ if you store a huge file in the repository and let \texttt{.git} tracks 
     its changes, the \texttt{.git} folder can grow quite huge
     \medskip
-    \item Use \texttt{.gitignore} to specify files that Git should ignore
+    \item Use \texttt{.gitignore} to specify files that Git should not track ``ignore''
     \begin{Verbatim}[frame=single, label=.gitignore]
       *.csv # ignore csv files
       /data/ # ignore data folder
     \end{Verbatim}
-    \item Include huge files as well as sensitive files (password, API key etc) in \texttt{.gitignore}
+    \item Include huge files as well as sensitive files that contain password, API key etc in \texttt{.gitignore}
   \end{itemize}
 \end{frame}
 
@@ -278,6 +279,20 @@
     \end{column}
   \end{columns}
 \end{frame}
+
+\begin{frame}{How Git/Github tracks files}
+    
+\end{frame}
+
+
+\begin{frame}{Comparison to alternatives (Dropbox, Google Drive)}
+  \begin{itemize}
+    \item Unlike Dropbox or Google Drive, Git/Github does not automatically track changes 
+    \item[] $\leadsto$ you need to take (small) action (mostly) when you 
+  \end{itemize}
+\end{frame}
+
+
 
 \backupbegin
 \backupend
