@@ -112,17 +112,27 @@
 
 %% preamble
 \title[Git workshop]{Git for Social Scientists: Introduction to Version Control with Git}
-\author[Tomoya]{Tomoya Sasaki\footnote{This workshop is inspired by workshops by Suyeol Yun and Shiro Kuriwaki.}}
+\author[Tomoya]{Tomoya Sasaki%
+\thanks{This slide deck is heavily inspired by the workshop materials by Suyeol Yun and Shiro Kuriwaki.}}
 \institute[MIT]{Massachusetts Institute of Technology}
 \date[Fall 2022]{November 4th, 2022}
 
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\titlepage
+\begin{frame}{Before we start today...}
+  \begin{itemize}
+    \item Create a Github account
+    \item Share your account name with me at tomoyas@mit.edu
+    \item If possible (or necessary), nstall Git in your computer (check \url{https://happygitwithr.com/install-git.html})
+  \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \titlepage
+  \end{frame}
+  
+  
 \begin{frame}{Introduction}
   \begin{columns}[c]
     \begin{column}{0.65\linewidth}
@@ -516,21 +526,28 @@
 \end{frame}
 
 
-\begin{frame}{Comparison to alternatives (Dropbox, Google Drive)}
+\begin{frame}{Comparison and relationship to alternatives (Dropbox, Google Drive)}
   \begin{itemize}[<+->]
     \item Unlike Dropbox or Google Drive, Git/Github does not automatically track changes 
     \item[] $\leadsto$ you need to take (small) action (mostly) when you 
     \item However, you can make your project folder clean with commits and branches
     \item You can revert your changes easily and flexibly if you make frequent commits 
     \item[] $\leadsto$ Dropbox and Google Drive only preserve once-in-a-day snapshots
+    \bigskip
+    \item Putting Git local repos in Dropbox or Google Drive can be very tricky
+    when your Dropbox/Google Drive account is synced to multiple computers
+    \item Git does not like autosync (autoupdate) by Dropbox/Google Drive
+    \item But you probably want to rely on these other services to store huge data that Git does not track
+    \item In my setup, I put Git repos in Dropbox but sync them only with my main computer and 
+      the same Git repos in my other computers are located in non-Dropbox folders
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Next step}
+\begin{frame}{What's next?}
   \begin{itemize}[<+->]
-    \item Work with private repos $\leadsto$ you need to work with authentication
-    \item (Gradually) learn how to use git in command lines
+    \item Working with private repos $\leadsto$ you need to work with authentication
+    \item (Gradually) Learning how to use git in command lines
     \medskip
     \item Probably you mess up once in a while. I still make mistakes sometimes 
     \item You can fix them easily by reverting
