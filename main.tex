@@ -203,7 +203,7 @@
         \item<2-> how they made the changes
         \item<3-> when they made the changes
       \end{itemize}
-      \item<4-> You can check the entire history since you created a repository
+      \item<4-> You can check the entire history since you created a repo
       and move back to previous versions easily (undo changes)
       \item<5-> Github can visualize them nicely
       \medskip
@@ -271,13 +271,13 @@
     \begin{itemize}
       \item 25 MB per file limit 
       (you can change this limit up to 100MB by changing setup)
-      \item 1GB per repository limit
+      \item 1GB per repo limit
     \end{itemize}
-    \item Remember that \texttt{.git} tracks and stores all the change you make in a repository
-    \item[] $\leadsto$ if you store a huge file in the repository and let \texttt{.git} tracks 
+    \item Remember that \texttt{.git} tracks and stores all the change you make in a repo
+    \item[] $\leadsto$ if you store a huge file in the repo and let \texttt{.git} tracks 
     its changes, the \texttt{.git} folder can grow quite huge
     \medskip
-    \item Use \texttt{.gitignore} to specify files that Git should not track ``ignore''
+    \item Use \texttt{.gitignore} to specify files that Git should not track (``ignore'')
     \begin{Verbatim}[frame=single, label=.gitignore]
       *.csv # ignore csv files
       /data/ # ignore any file in data folder
@@ -315,7 +315,7 @@
       \begin{itemize}[<+->] \setlength\itemsep{10pt}
         \item Git tracks changes in files with ``\textbf{commit}''
         \item Changes between commits are called ``\textbf{diff}''
-        \item Each commit is a snapshot of your repository at specific times
+        \item Each commit is a snapshot of your repo at specific times
         \item Commit has a human-readable message and an (first few characters of) commit ID
         \item Commit is not automatic and you actively make a ``commit'' with a message
         \item Ideally commit should be atomic units of change that represent a specific idea
@@ -453,7 +453,7 @@
       \begin{itemize}[<+->]\setlength\itemsep{10pt}
         \item Easy collaboration is a distinct feature of Git
         \item Key concepts: \textbf{branch} and \textbf{fork}
-        \item Branches are parallel universe of a repository
+        \item Branches are parallel universe of a repo
         \item Main branch is the default branch and should contain stable version
         \item You contribute to a repo by creating a new branch in isolation from changes 
         that other people are making to the repo
@@ -523,7 +523,7 @@
     \begin{column}{0.55\linewidth}
       \begin{itemize}[<+->]\setlength\itemsep{10pt}
         \setlength{\leftmarginii}{10pt}
-        \item Even if you have a public repository on Github, only those who have permission 
+        \item Even if you have a public repo on Github, only those who have permission 
         can directory push and merge to your repo
         \item What to do if you want to contribute to someone else's repo or borrow their idea and 
         tailor for your own project?
