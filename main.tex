@@ -398,7 +398,7 @@
   \medskip
   \begin{itemize}[<+->]
     \item If you have any existing project that you want to track with Git, create a remote repo 
-    on Github, clone it to your computer, and move codes and folders into the local repo
+    on Github, clone it to your computer (i.e., local repo), and move codes and folders into the local repo
   \end{itemize}
 \end{frame}
 
@@ -406,8 +406,8 @@
 \begin{frame}{General (suggestive) daily workflow}
     \begin{enumerate}[<+->]
     \item Edit, add, or delete files in your repo
-    \item Stage files you want to add to commit
-    \item Commit when you make some changes that represent a specific idea or solve particular issues
+    \item Stage files you want to add to commit and 
+    make a commit when you make some changes that represent a specific idea or solve particular issues
     \begin{itemize}
       \item Add lines to clean data
       \item Add lines to visualize regression results
@@ -425,6 +425,26 @@
   \end{itemize}
 \end{frame}
 
+
+\begin{frame}{Setup authentication}
+  \begin{itemize}[<+->]
+    \item When we interact with a remote Git server, 
+    such as GitHub, we need to provide credentials
+    \item Github provides two authentication methods, HTTPS and SSH
+    \item I recommend HTTPS and will use HTTPS in this workshop
+    \item Procedure
+    \begin{enumerate}
+      \item Go to  \url{https://github.com/settings/tokens} and click ``Generate token''
+      \item Decide the scope. Choose (at least) ``repo'', ``user'', and ``workflow''.
+      \item Click ``Generate token''. This is the same as the password to interact  with Git. You shouldn't show this to anyone.
+      \item Copy the generated strings (PAT, personal access token)
+      \item Open RStudio and run \texttt{gitcreds::gitcreds\_set()} 
+      (Install the \texttt{gitcreds} package beforehand)
+      \item Paste your PAT
+      \item RStudio stores and remembers PAT for you
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{How Git/Github handle collarborative projects}
   \begin{columns}[c]
@@ -479,12 +499,12 @@
 
 \begin{frame}{General (suggestive) daily workflow with multiple branches}
   \begin{enumerate}[<+->]
-    \item Create a new branch
+    \item Create a new branch (usually from the default branch)
     \item In your branch...
     \begin{enumerate}
       \item Edit, add, or delete files in your repo
-      \item Stage files you want to add to commit
-      \item Commit when you make some changes that represent a specific idea or solve particular issues
+      \item Stage files you want to add to commit and 
+      make a commit when you make some changes that represent a specific idea or solve particular issues
       \item Push when you make a set of commits or when you call it a day  
       \item Repeat the process above
     \end{enumerate}
@@ -546,7 +566,7 @@
 
 \begin{frame}{What's next?}
   \begin{itemize}[<+->]
-    \item Working with private repos $\leadsto$ you need to work with authentication
+    \item Working with private repos
     \item (Gradually) Learning how to use git in command lines
     \medskip
     \item Probably you mess up once in a while. I still make mistakes sometimes 
