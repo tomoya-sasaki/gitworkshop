@@ -11,7 +11,7 @@
 % \setbeamertemplate{navigation symbols}{}
 % \setbeamercolor{item projected}{bg=red}
 % \useoutertheme{infolines}
-% \setbeamersize{text margin left=8mm} 
+% \setbeamersize{text margin left=8mm}
 % \setbeamersize{text margin right=8mm}
 % \setbeamercolor{itemize item}{fg=black}
 % \setbeamercolor{enumerate item}{fg=black}
@@ -48,7 +48,7 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 % \newcommand\smallfont{\fontsize{7}{7}\selectfont}
-\usepackage{dcolumn,booktabs,multirow,rotating} 
+\usepackage{dcolumn,booktabs,multirow,rotating}
 
 \newcommand{\backupbegin}{
   \newcounter{finalframe}
@@ -131,8 +131,8 @@
 \begin{frame}
   \titlepage
   \end{frame}
-  
-  
+
+
 \begin{frame}{Introduction}
   \begin{columns}[c]
     \begin{column}{0.65\linewidth}
@@ -179,7 +179,7 @@
     \item Git: (the most popular) software for version control
     \item Github: service to host your git on the Internet
     (alternatives include GitLab, Bitbucket ...)
-    \item Repository: unit of a version control project, 
+    \item Repository: unit of a version control project,
     your project folder with a subfolder named \texttt{.git}
     \begin{itemize}
       \item Often simply called ``repo''
@@ -199,7 +199,7 @@
     \begin{itemize}
       \item<1-> You can identify %\vspace{-5pt}
       \begin{itemize}
-        \item<1-> who made changes 
+        \item<1-> who made changes
         \item<2-> how they made the changes
         \item<3-> when they made the changes
       \end{itemize}
@@ -207,23 +207,23 @@
       and move back to previous versions easily (undo changes)
       \item<5-> Github can visualize them nicely
       \medskip
-      \item<7-> Useful when you 
+      \item<7-> Useful when you
       \begin{itemize}
         \item<7-> want to revert your (particular) changes
         \item<8-> work on a collaborative project
       \end{itemize}
       \medskip
-      \item<9-> You don't need to keep 
+      \item<9-> You don't need to keep
       \begin{itemize}
         \item<9-> different versions of the same file: \texttt{clean\_data\_1104.R}, \texttt{clean\_data\_1020.R}
         \item<10-> the same file edited by different people: \texttt{clean\_data\_tomoya.R}, \texttt{clean\_data\_adam.R}
       \end{itemize}
-    \end{itemize}      
+    \end{itemize}
   \end{column}\hfill
   \begin{column}{0.53\linewidth}
     \centering
     \visible<5->{\includegraphics[width = \linewidth]{github_history.png}}
-    \visible<6->{\includegraphics[width = \linewidth]{github_blame.png}} 
+    \visible<6->{\includegraphics[width = \linewidth]{github_blame.png}}
   \end{column}
   \end{columns}
 \end{frame}
@@ -231,7 +231,7 @@
 \begin{frame}{Benefit of Git/Github: Tracking who/how/when}
   \begin{itemize}[<+->]\setlength\itemsep{-3pt}
     \item You can check how the results change when we try different specification
-    \item Easy to track which part of the results changed 
+    \item Easy to track which part of the results changed
   \end{itemize}
   \vspace{10pt}
   \centering
@@ -247,20 +247,20 @@
         \item<2-> Contribute to software packages hosting on Github
         \item<3-> Tweak a package developed by someone else for your own purposes
         \item<4-> Send a request to package developer (often happens at ``Issue'')
-        \item<5-> Nice integration with popular apps/websites such as RStudio and Overleaf 
+        \item<5-> Nice integration with popular apps/websites such as RStudio and Overleaf
       \end{itemize}
     \end{column}\hfill
     \begin{column}{0.53\linewidth}
       % \begin{overprint}
       % \centering
       % \onslide<2-3|handout:1>{\includegraphics[width = 0.85\linewidth]{github_forked.png}}
-      % \onslide<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}} 
+      % \onslide<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}}
       % \end{overprint}
       \centering
       \only<1|handout:1>{\includegraphics[width = 0.85\linewidth]{github_website.png}}
       \only<2-3|handout:2>{\includegraphics[width = 0.85\linewidth]{github_forked.png}}
-      \only<4|handout:3>{\includegraphics[width = \linewidth]{github_issue.png}} 
-      \only<5|handout:4>{\includegraphics[width = 0.55\linewidth]{github_overleaf.png}} 
+      \only<4|handout:3>{\includegraphics[width = \linewidth]{github_issue.png}}
+      \only<5|handout:4>{\includegraphics[width = 0.55\linewidth]{github_overleaf.png}}
       \end{column}
   \end{columns}
 \end{frame}
@@ -269,12 +269,12 @@
   \begin{itemize}[<+->]
     \item Github imposes file size limit:
     \begin{itemize}
-      \item 25 MB per file limit 
+      \item 25 MB per file limit
       (you can change this limit up to 100MB by changing setup)
       \item 1GB per repo limit
     \end{itemize}
     \item Remember that \texttt{.git} tracks and stores all the change you make in a repo
-    \item[] $\leadsto$ if you store a huge file in the repo and let \texttt{.git} tracks 
+    \item[] $\leadsto$ if you store a huge file in the repo and let \texttt{.git} tracks
     its changes, the \texttt{.git} folder can grow quite huge
     \medskip
     \item Use \texttt{.gitignore} to specify files that Git should not track (``ignore'')
@@ -291,13 +291,13 @@
   \begin{columns}[c]
     \begin{column}{0.46\linewidth}
       \begin{itemize}[<+->]\setlength\itemsep{10pt}
-        \item Git cannot track line by line changes for non-text files such as 
+        \item Git cannot track line by line changes for non-text files such as
         PDF, Microsoft Word/Excel/Powerpoint, JPG, ...
         \item Note that Git still tracks changes
         \item The value of Git/Github is limited
         \medskip
         \item In the right example, Git/Github recognizes the changes as the changes in file sizes\\
-        $\leadsto$ even though you update a figure in PDF or PNG format, 
+        $\leadsto$ even though you update a figure in PDF or PNG format,
         Git/Github might not recognize it unless the file size changes...
       \end{itemize}
     \end{column} \hfill
@@ -331,7 +331,7 @@
         \item<4-> 0d492rg: ``add new analysis''
       \end{itemize}
     \end{column}
-  \end{columns}    
+  \end{columns}
 \end{frame}
 
 
@@ -339,7 +339,7 @@
   \begin{itemize}[<+->]%\setlength\itemsep{10pt}
     % \item Commit is a Git feature
     \item If you just work on your local repos (and only on one computer), you don't need Github
-    \item Repos: unit of a version control project, 
+    \item Repos: unit of a version control project,
     contains a folder with a subfolder named \texttt{.git}
     \begin{itemize}
       \item Local repos: repos (folder) in your own computer, ordinary project folder with subfolder named \texttt{.git}
@@ -349,7 +349,7 @@
     \begin{itemize}
       \item come with unique URL (\texttt{https://github.com/username/reponame.git})
       \item are basically a copy of your local repos
-      \item nicely visualize your commits 
+      \item nicely visualize your commits
       and also serve as a backup of your codes (remember, not for data)
       \item useful when you work on the same project with multiple computers
     \end{itemize}
@@ -366,7 +366,7 @@
       \begin{itemize}\setlength\itemsep{10pt}
         \item<1-> Interaction with remote repos: \textbf{pull} and \textbf{push}
         \item<2-> You \textbf{push} the commits you made to remote repos
-        \item<3-> You \textbf{pull} new commits on remote repos 
+        \item<3-> You \textbf{pull} new commits on remote repos
         \item<3-> Technically ``pull'' does \textbf{fetch} and \textbf{merge}
       \end{itemize}
     \end{column} \hfill
@@ -398,7 +398,7 @@
   \end{enumerate}
   \medskip
   \begin{itemize}[<+->]
-    \item If you have any existing project that you want to track with Git, create a remote repo 
+    \item If you have any existing project that you want to track with Git, create a remote repo
     on Github, clone it to your computer (i.e., local repo), and move codes and folders into the local repo
   \end{itemize}
 \end{frame}
@@ -407,7 +407,7 @@
 \begin{frame}{General (suggestive) daily workflow}
     \begin{enumerate}[<+->]
     \item Edit, add, or delete files in your repo
-    \item Stage files you want to add to commit and 
+    \item Stage files you want to add to commit and
     make a commit when you make some changes that represent a specific idea or solve particular issues
     \begin{itemize}
       \item Add lines to clean data
@@ -429,7 +429,7 @@
 
 \begin{frame}{Setup authentication}
   \begin{itemize}[<+->]
-    \item When we interact with a remote Git server, 
+    \item When we interact with a remote Git server,
     such as GitHub, we need to provide credentials
     \item Github provides two authentication methods, HTTPS and SSH
     \item I recommend HTTPS and will use HTTPS in this workshop
@@ -439,7 +439,7 @@
       \item Decide the scope. Choose (at least) ``repo'', ``user'', and ``workflow''.
       \item Click ``Generate token''. This is the same as the password to interact  with Git. You shouldn't show this to anyone.
       \item Copy the generated strings (PAT, personal access token)
-      \item Open RStudio and run \texttt{gitcreds::gitcreds\_set()} 
+      \item Open RStudio and run \texttt{gitcreds::gitcreds\_set()}
       (Install the \texttt{gitcreds} package beforehand)
       \item Paste your PAT
       \item RStudio stores and remembers PAT for you
@@ -455,7 +455,7 @@
         \item Key concepts: \textbf{branch} and \textbf{fork}
         \item Branches are parallel universe of a repo
         \item Main branch is the default branch and should contain stable version
-        \item You contribute to a repo by creating a new branch in isolation from changes 
+        \item You contribute to a repo by creating a new branch in isolation from changes
         that other people are making to the repo
         \item Whenever you work on a collaborative project, you should always create a new branch
       \end{itemize}
@@ -464,7 +464,7 @@
       \only<7->{\includegraphics[width = \linewidth]{github_branch.png}}
       \begin{itemize}
         \item<7-> Each circle represents ``commit''
-        \item<8-> In this example, Adam and Tomo work on the same project and 
+        \item<8-> In this example, Adam and Tomo work on the same project and
         each of them creates a branch
       \end{itemize}
     \end{column}
@@ -482,7 +482,7 @@
         if the changes you make in your branch won't break the default branch
         \item By merging your branch into the default branch, any edit you make in your branch
         will be reflected in the default branch
-        \item When both of them finish their work, they open a pull request and 
+        \item When both of them finish their work, they open a pull request and
         merge their branch into the main branch
       \end{itemize}
     \end{column} \hfill
@@ -490,7 +490,7 @@
       \includegraphics[width = \linewidth]{github_branch.png}
       \begin{itemize}
         \item Each circle represents ``commit''
-        \item In this example, Adam and Tomo work on the same project and 
+        \item In this example, Adam and Tomo work on the same project and
         each of them creates a branch
       \end{itemize}
     \end{column}
@@ -504,9 +504,9 @@
     \item In your branch...
     \begin{enumerate}
       \item Edit, add, or delete files in your repo
-      \item Stage files you want to add to commit and 
+      \item Stage files you want to add to commit and
       make a commit when you make some changes that represent a specific idea or solve particular issues
-      \item Push when you make a set of commits or when you call it a day  
+      \item Push when you make a set of commits or when you call it a day
       \item Repeat the process above
     \end{enumerate}
     \item Create a pull request when you finish your project
@@ -523,9 +523,9 @@
     \begin{column}{0.55\linewidth}
       \begin{itemize}[<+->]\setlength\itemsep{10pt}
         \setlength{\leftmarginii}{10pt}
-        \item Even if you have a public repo on Github, only those who have permission 
+        \item Even if you have a public repo on Github, only those who have permission
         can directory push and merge to your repo
-        \item What to do if you want to contribute to someone else's repo or borrow their idea and 
+        \item What to do if you want to contribute to someone else's repo or borrow their idea and
         tailor for your own project?
         \item \textbf{Fork} their project to your Github account
         \begin{itemize}
@@ -538,7 +538,7 @@
       % \begin{overprint}
       % \centering
       % \onslide<2-3|handout:1>{\includegraphics[width = 0.85\linewidth]{github_forked.png}}
-      % \onslide<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}} 
+      % \onslide<4|handout:2>{\includegraphics[width = \linewidth]{github_issue.png}}
       % \end{overprint}
       \centering
       \only<4->{\includegraphics[width = 0.95\linewidth]{github_forked.png}}
@@ -549,17 +549,17 @@
 
 \begin{frame}{Comparison and relationship to alternatives (Dropbox, Google Drive)}
   \begin{itemize}[<+->]
-    \item Unlike Dropbox or Google Drive, Git/Github does not automatically track changes 
-    \item[] $\leadsto$ you need to take (small) action (mostly) when you 
+    \item Unlike Dropbox or Google Drive, Git/Github does not automatically track changes
+    \item[] $\leadsto$ you need to take (small) action (mostly) when you edit
     \item However, you can make your project folder clean with commits and branches
-    \item You can revert your changes easily and flexibly if you make frequent commits 
+    \item You can revert your changes easily and flexibly if you make frequent commits
     \item[] $\leadsto$ Dropbox and Google Drive only preserve once-in-a-day snapshots
     \bigskip
     \item Putting Git local repos in Dropbox or Google Drive can be very tricky
     when your Dropbox/Google Drive account is synced to multiple computers
     \item Git does not like autosync (autoupdate) by Dropbox/Google Drive
     \item But you probably want to rely on these other services to store huge data that Git does not track
-    \item In my setup, I put Git repos in Dropbox but sync them only with my main computer and 
+    \item In my setup, I put Git repos in Dropbox but sync them only with my main computer and
       the same Git repos in my other computers are located in non-Dropbox folders
   \end{itemize}
 \end{frame}
@@ -570,7 +570,7 @@
     \item Working with private repos
     \item (Gradually) Learning how to use git in command lines
     \medskip
-    \item Probably you mess up once in a while. I still make mistakes sometimes 
+    \item Probably you mess up once in a while. I still make mistakes sometimes
     \item You can fix them easily by reverting
   \end{itemize}
 \end{frame}
