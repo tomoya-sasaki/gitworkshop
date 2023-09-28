@@ -115,7 +115,7 @@
 \author[Tomoya]{Tomoya Sasaki%
 \thanks{This slide deck is heavily inspired by the workshop materials by Suyeol Yun and Shiro Kuriwaki.}}
 \institute[MIT]{Massachusetts Institute of Technology}
-\date[Fall 2022]{November 4th, 2022}
+\date[Fall 2023]{October 20th, 2022}
 
 \begin{document}
 
@@ -152,6 +152,10 @@
 \begin{frame}{Introduction}
   \begin{itemize}[<+->]  \setlength\itemsep{-3pt}
     \item Why Git? Why Github? Why version control?
+    % \vspace{-5pt}
+    % \begin{itemize}\setlength\itemsep{-5pt}
+    %   \item Version control: the practice of tracking and managing changes to software code
+    % \end{itemize}
     \item These are essential tools for programmers
     \item How about social social scientists?
     \item My opinion: Social scientists also benefit from version control with Git \vspace{-5pt}
@@ -177,7 +181,7 @@
   \begin{itemize}[<+->]
     \item Version control: tracking and managing changes to file content
     \item Git: (the most popular) software for version control
-    \item Github: service to host your git on the Internet
+    \item Github: (the most popular) service to host your git on the Internet
     (alternatives include GitLab, Bitbucket ...)
     \item Repository: unit of a version control project,
     your project folder with a subfolder named \texttt{.git}
@@ -312,13 +316,14 @@
 \begin{frame}{How Git tracks files}
   \begin{columns}[c]
     \begin{column}{0.46\linewidth}
-      \begin{itemize}[<+->] \setlength\itemsep{10pt}
+      \begin{itemize}[<+->] \setlength\itemsep{5pt}
         \item Git tracks changes in files with ``\textbf{commit}''
+        \item Hash (labeled with a random number) is assigned to each commit
         \item Changes between commits are called ``\textbf{diff}''
         \item Each commit is a snapshot of your repo at specific times
         \item Commit has a human-readable message and an (first few characters of) commit ID
         \item Commit is not automatic and you actively make a ``commit'' with a message
-        \item Ideally commit should be atomic units of change that represent a specific idea
+        \item Ideally commit should be atomic units of changes that represent a specific idea
         \item You need to ``\textbf{stage}'' the files you want to add to commit (more later)
       \end{itemize}
     \end{column} \hfill
